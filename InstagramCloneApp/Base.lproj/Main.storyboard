@@ -95,7 +95,7 @@
         <!--Upload-->
         <scene sceneID="2dr-KX-3Lk">
             <objects>
-                <viewController id="2gW-jz-ahe" customClass="UploadViewController" customModule="InstagramCloneApp" sceneMemberID="viewController">
+                <viewController id="2gW-jz-ahe" customClass="UploadViewController" customModule="InstagramCloneApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JdQ-2T-HKb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,17 +116,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFd-7U-gAR">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFd-7U-gAR">
                                 <rect key="frame" x="103" y="268" width="205" height="118"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOutClicked:" destination="Z6S-kX-gDf" eventType="touchUpInside" id="IfK-F6-NAi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RgP-SN-L28"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RgP-SN-L28" firstAttribute="bottom" secondItem="oFd-7U-gAR" secondAttribute="bottom" constant="383" id="1oL-yA-RpE"/>
+                            <constraint firstItem="oFd-7U-gAR" firstAttribute="top" secondItem="RgP-SN-L28" secondAttribute="top" constant="209" id="6VV-Rg-UzS"/>
+                            <constraint firstItem="oFd-7U-gAR" firstAttribute="leading" secondItem="RgP-SN-L28" secondAttribute="leading" constant="103" id="keE-aO-P1J"/>
+                            <constraint firstItem="RgP-SN-L28" firstAttribute="trailing" secondItem="oFd-7U-gAR" secondAttribute="trailing" constant="85" id="wY0-gh-ZaL"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="s.circle.fill" catalog="system" id="pDr-lf-pU0"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toViewController" modalPresentationStyle="fullScreen" id="2E2-NN-rZy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uvs-AE-8VQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -135,7 +146,7 @@
         <!--Feed-->
         <scene sceneID="BcD-T4-J0R">
             <objects>
-                <viewController id="zVh-9b-tmx" customClass="FeedViewController" customModule="InstagramCloneApp" sceneMemberID="viewController">
+                <viewController id="zVh-9b-tmx" customClass="FeedViewController" customModule="InstagramCloneApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AUy-5e-dXM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
