@@ -95,7 +95,7 @@
         <!--Upload-->
         <scene sceneID="2dr-KX-3Lk">
             <objects>
-                <viewController id="2gW-jz-ahe" sceneMemberID="viewController">
+                <viewController id="2gW-jz-ahe" customClass="UploadViewController" customModule="InstagramCloneApp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JdQ-2T-HKb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,10 +108,34 @@
             </objects>
             <point key="canvasLocation" x="892" y="395"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="2GJ-Xg-8Ug">
+            <objects>
+                <viewController id="Z6S-kX-gDf" customClass="SettingsViewController" customModule="InstagramCloneApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ae6-le-98L">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFd-7U-gAR">
+                                <rect key="frame" x="103" y="268" width="205" height="118"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RgP-SN-L28"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="s.circle.fill" catalog="system" id="pDr-lf-pU0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uvs-AE-8VQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890.83969465648852" y="1088.7323943661972"/>
+        </scene>
         <!--Feed-->
         <scene sceneID="BcD-T4-J0R">
             <objects>
-                <viewController id="zVh-9b-tmx" sceneMemberID="viewController">
+                <viewController id="zVh-9b-tmx" customClass="FeedViewController" customModule="InstagramCloneApp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AUy-5e-dXM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pdp-xh-j5C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="892" y="-212"/>
+            <point key="canvasLocation" x="891" y="-266"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LFV-1L-7Kp">
@@ -137,6 +161,7 @@
                     <connections>
                         <segue destination="zVh-9b-tmx" kind="relationship" relationship="viewControllers" id="1M0-2I-c6x"/>
                         <segue destination="2gW-jz-ahe" kind="relationship" relationship="viewControllers" id="8nb-Nb-8Km"/>
+                        <segue destination="Z6S-kX-gDf" kind="relationship" relationship="viewControllers" id="mvX-Nq-YPW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lOr-dK-dR4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -146,6 +171,7 @@
     </scenes>
     <resources>
         <image name="f.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="s.circle.fill" catalog="system" width="128" height="123"/>
         <image name="u.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
