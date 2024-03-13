@@ -23,11 +23,43 @@ class ViewController: UIViewController {
 
 
     @IBAction func signInClicked(_ sender: Any) {
-        performSegue(withIdentifier: "toFeedVC", sender: nil )
+        if emailTextField.text != "" && passwordTextField.text != "" {
+            
+            Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (authdata, error) in
+                if error != nil {
+                    self.makeAlert(alerttitle: "Error", alertmessage: error?.localizedDescription ?? "Error!")
+                } else {
+                    self.performSegue(withIdentifier: "toFeedVC", sender: nil)
+                }
+            }
+            
+        } else {
+            makeAlert(alerttitle: "Error", alertmessage: "Username/Password?")
+        }
+        
     }
     
     
     @IBAction func signUpClicked(_ sender: Any) {
+        if emailTextField.text != "" && passwordTextField.text != "" {
+            
+            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (authdata, error) in
+                if error != nil {
+                    self.makeAlert(alerttitle: "Error", alertmessage: error?.localizedDescription ?? "Error")
+                } else {
+                    self.performSegue(withIdentifier: "toFeedVC", sender: nil)
+                }
+            }
+        }else {
+            makeAlert(alerttitle: "Error", alertmessage: "Username/Password not found.")
+        }
+    }
+    
+    func makeAlert (alerttitle: String, alertmessage: String) {
+        let alert = UIAlertController(title: alerttitle, message: alertmessage, preferredStyle: .alert)
+        let okBUtton = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okBUtton)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
