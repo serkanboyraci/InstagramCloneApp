@@ -21,6 +21,7 @@
 		607183FC2BA0748B009DD2AE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 607183FB2BA0748B009DD2AE /* FirebaseAuth */; };
 		607183FE2BA0748B009DD2AE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 607183FD2BA0748B009DD2AE /* FirebaseFirestore */; };
 		607184002BA0748B009DD2AE /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 607183FF2BA0748B009DD2AE /* FirebaseStorage */; };
+		60EFAD982BA1D384006F0EBE /* select.png in Resources */ = {isa = PBXBuildFile; fileRef = 60EFAD972BA1D384006F0EBE /* select.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		607183EE2BA0690A009DD2AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		607183F02BA0690A009DD2AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607183F62BA0729F009DD2AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		60EFAD972BA1D384006F0EBE /* select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				605FB5922BA0C2C30006084D /* SettingsViewController.swift */,
 				607183E82BA06909009DD2AE /* Main.storyboard */,
 				607183EB2BA0690A009DD2AE /* Assets.xcassets */,
+				60EFAD972BA1D384006F0EBE /* select.png */,
 				607183ED2BA0690A009DD2AE /* LaunchScreen.storyboard */,
 				607183F02BA0690A009DD2AE /* Info.plist */,
 				607183F62BA0729F009DD2AE /* GoogleService-Info.plist */,
@@ -158,6 +161,7 @@
 				607183F72BA0729F009DD2AE /* GoogleService-Info.plist in Resources */,
 				607183EC2BA0690A009DD2AE /* Assets.xcassets in Resources */,
 				607183EA2BA06909009DD2AE /* Main.storyboard in Resources */,
+				60EFAD982BA1D384006F0EBE /* select.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
