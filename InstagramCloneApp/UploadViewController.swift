@@ -38,6 +38,13 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.dismiss(animated: true, completion: nil)
     }
     
+    func makeAlert (alerttitle: String, alertmessage: String) {
+        let alert = UIAlertController(title: alerttitle, message: alertmessage, preferredStyle: .alert)
+        let okBUtton = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okBUtton)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 
   
     @IBAction func uploadButtonClicked(_ sender: Any) {
@@ -48,15 +55,19 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         if let data = imageView.image?.jpegData(compressionQuality: 0.5) {
             
-            let imageReference = mediaFolder.child("image.jpg")
+            let uuid = UUID().uuidString
+            
+            let imageReference = mediaFolder.child("\(uuid).jpg")
             imageReference.putData(data, metadata: nil) { (metadata, error) in
                 if error != nil {
-                    print(error?.localizedDescription)
+                    self.makeAlert(alerttitle: "Error", alertmessage: error?.localizedDescription ?? "ERROR")
                 } else {
                     imageReference.downloadURL { (url, error) in
                         if error == nil {
                             let imageUrl = url?.absoluteString
-                            print(imageUrl)
+                        
+                            
+                        // DATABASE
                         }
                     }
                 }
