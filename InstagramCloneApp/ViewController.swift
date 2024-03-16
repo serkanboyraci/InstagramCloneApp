@@ -27,9 +27,10 @@ class ViewController: UIViewController {
     @IBAction func signInClicked(_ sender: Any) {
         if emailTextField.text != "" && passwordTextField.text != "" {
             
-            Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (authdata, error) in
+            Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (authdata, error) in // to creaate a user
+                
                 if error != nil {
-                    self.makeAlert(alerttitle: "Error", alertmessage: error?.localizedDescription ?? "Error!")
+                    self.makeAlert(alerttitle: "Error", alertmessage: error?.localizedDescription ?? "Error!") // to use firebase error message we use localizeddescription
                 } else {
                     self.performSegue(withIdentifier: "toFeedVC", sender: nil)
                 }
