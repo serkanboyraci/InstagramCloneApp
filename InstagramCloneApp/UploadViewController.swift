@@ -91,7 +91,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                                     self.imageView.image = UIImage(named: "select.png")
                                     self.commentText.text = ""
                                     // and go to the feed page
-                                    self.tabBarController?.selectedIndex = 0 // means Feed
+                                    self.tabBarController?.selectedIndex = 0 // 0 means Feed
                                 }
                             })
                         }
