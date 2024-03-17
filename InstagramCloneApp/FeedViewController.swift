@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -19,6 +20,32 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         // Do any additional setup after loading the view.
     }
+    
+    func getDataFromFirestore() {
+    
+        let fireStoreDatabase = Firestore.firestore()
+        
+        /* to use it only date errors
+        let settings = fireStoreDatabase.settings
+        fireStoreDatabase.settings = settings
+        */
+        
+        fireStoreDatabase.collection("Posts").addSnapshotListener { (snapshot, error) in
+            if error != nil {
+                print(error?.localizedDescription)
+            } else {
+                
+            }
+        }
+        
+        
+        
+    }
+    
+    
+    
+    
+    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
