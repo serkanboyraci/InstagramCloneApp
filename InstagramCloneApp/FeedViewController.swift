@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import SDWebImage
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -43,6 +44,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                 print(error?.localizedDescription)
             } else {
                 if snapshot?.isEmpty != true && snapshot != nil {
+                     
+                    self.userEmailArray.removeAll(keepingCapacity: false) // to erase same posts
+                    self.userImageArray.removeAll(keepingCapacity: false)
+                    self.userCommentArray.removeAll(keepingCapacity: false)
+                    self.likeArray.removeAll(keepingCapacity: false)
+                    
                     for document in snapshot!.documents { // snpashot gives us array. we must take one by one
                         
                         let documentID = document.documentID
@@ -75,7 +82,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userEmailArray.count
+        return userCommentArray.count
     }
 
 
@@ -85,7 +92,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.userEmailLabel.text = userEmailArray[indexPath.row]
         cell.likeLabel.text = String(likeArray[indexPath.row])
         cell.commentLabel.text = userCommentArray[indexPath.row]
-        cell.userImageView.image = UIImage(named: "select.png")
+        cell.userImageView.sd_setImage(with: URL(string: self.userImageArray[indexPath.row])) // to use sd web image, we must use url to string and self.
         return cell
     }
 }
